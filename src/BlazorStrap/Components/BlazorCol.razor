@@ -1,0 +1,16 @@
+﻿@inherits ColumnBase
+
+<DynamicElement TagName="div" class="@classname" @attributes="UnknownParameters">
+    @ChildContent
+</DynamicElement>
+
+@code {
+    private string classname =>
+        new CssBuilder()
+            .AddClass(GetColumnClass())
+            .AddClass(Class)
+        .Build();
+
+    [Parameter] private string Class { get; set; }
+    [Parameter] private RenderFragment ChildContent { get; set; }
+}

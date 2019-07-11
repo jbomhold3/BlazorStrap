@@ -1,0 +1,18 @@
+﻿@inherits BootstrapComponentBase
+
+<DynamicElement TagName="a" class="@classname" @attributes="UnknownParameters">
+    @ChildContent
+</DynamicElement>
+
+@code {
+    private string classname =>
+        new CssBuilder("nav-item nav-link")
+            .AddClass("active", IsActive)
+            .AddClass("disabled", IsDisabled)
+        .Build();
+
+    [Parameter] private bool IsActive { get; set; }
+    [Parameter] private bool IsDisabled { get; set; }
+    [Parameter] private string Class { get; set; }
+    [Parameter] private RenderFragment ChildContent { get; set; }
+}

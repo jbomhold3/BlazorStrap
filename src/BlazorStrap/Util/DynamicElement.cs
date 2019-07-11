@@ -21,13 +21,13 @@ namespace BlazorStrap.Util
         
         [Parameter] private RenderFragment ChildContent { get; set; }
         [Parameter(CaptureUnmatchedValues =true)]
-        private IDictionary<string, object> ExtraParams { get; set; }
+        private IDictionary<string, object> MyParams { get; set; }
 
         protected override void BuildRenderTree(RenderTreeBuilder builder)
         {
             base.BuildRenderTree(builder);
             builder.OpenElement(0, TagName);
-            builder.AddMultipleAttributes(1, ExtraParams);
+            builder.AddMultipleAttributes(1, MyParams);
             builder.AddContent(3, ChildContent);
             builder.CloseElement();
         }

@@ -1,0 +1,19 @@
+﻿@inherits BootstrapComponentBase
+
+<DynamicElement TagName="li" class="@classname" @onclick="@onclick" @attributes="UnknownParameters" />
+
+@code {
+    private string classname =>
+        new CssBuilder()
+            .AddClass("active", IsActive)
+        .Build();
+
+    [Parameter] private bool IsActive { get; set; }
+    [Parameter] private int Index { get; set; }
+    [Parameter] private EventCallback<int> ActiveIndexChangedEvent { get; set; }
+
+    async Task onclick()
+    {
+        await ActiveIndexChangedEvent.InvokeAsync(Index);
+    }
+}

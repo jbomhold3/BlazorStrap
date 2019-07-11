@@ -1,0 +1,17 @@
+﻿@inherits BootstrapComponentBase
+
+<DynamicElement TagName="td" class="@classname" @attributes="UnknownParameters">
+    @ChildContent
+</DynamicElement>
+
+@code {
+    string classname =>
+        new CssBuilder()
+            .AddClass($"table-{Color.ToDescriptionString()}", Color != Color.None)
+            .AddClass(Class)
+        .Build();
+
+    [Parameter] private Color Color { get; set; } = Color.None;
+    [Parameter] private string Class { get; set; }
+    [Parameter] private RenderFragment ChildContent { get; set; }
+}

@@ -1,0 +1,18 @@
+﻿@inherits BootstrapComponentBase
+
+<DynamicElement TagName="div" class="@classname" @attributes="UnknownParameters">
+    @ChildContent
+</DynamicElement>
+
+@code {
+    private string classname =>
+        new CssBuilder()
+            .AddClass("jumbotron jumbotron-fluid", IsFluid)
+            .AddClass("jumbotron", !IsFluid)
+            .AddClass(Class)
+        .Build();
+
+    [Parameter] private bool IsFluid { get; set; }
+    [Parameter] private string Class { get; set; }
+    [Parameter] private RenderFragment ChildContent { get; set; }
+}

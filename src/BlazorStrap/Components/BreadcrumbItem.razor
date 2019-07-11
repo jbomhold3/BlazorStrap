@@ -1,0 +1,20 @@
+﻿@inherits BootstrapComponentBase
+
+<DynamicElement TagName="li" class="@classname" aria-current="@aria" @attributes="UnknownParameters">
+    @ChildContent
+</DynamicElement>
+
+
+@code {
+    private string classname =>
+        new CssBuilder("breadcrumb-item")
+            .AddClass("active", IsActive)
+            .AddClass(Class)
+        .Build();
+
+    private string aria => IsActive ? "page" : null;
+
+    [Parameter] private bool IsActive { get; set; }
+    [Parameter] private string Class { get; set; }
+    [Parameter] private RenderFragment ChildContent { get; set; }
+}

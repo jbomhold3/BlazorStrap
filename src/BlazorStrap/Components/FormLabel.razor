@@ -1,0 +1,15 @@
+﻿@inherits BootstrapComponentBase
+
+<DynamicElement TagName="label" class="@classname" @attributes="UnknownParameters">
+    @ChildContent
+</DynamicElement>
+
+@code {
+    string classname =>
+        new CssBuilder()
+            .AddClass(Class)
+        .Build();
+
+    [Parameter] private string Class { get; set; }
+    [Parameter] private RenderFragment ChildContent { get; set; }
+}

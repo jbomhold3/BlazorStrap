@@ -1,0 +1,15 @@
+﻿@inherits BootstrapComponentBase
+
+<DynamicElement TagName="div" class="@classname" @attributes="UnknownParameters">
+    @ChildContent
+</DynamicElement>
+
+@code {
+    private string classname =>
+        new CssBuilder("popover-body")
+            .AddClass(Class)
+        .Build();
+
+    [Parameter] private string Class { get; set; }
+    [Parameter] private RenderFragment ChildContent { get; set; }
+}

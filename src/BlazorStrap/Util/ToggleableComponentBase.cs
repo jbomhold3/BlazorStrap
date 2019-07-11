@@ -6,7 +6,7 @@ namespace BlazorStrap.Util
     /// <summary>
     /// The base class for Toggle BlazorStrap components.
     /// </summary>
-    public abstract class ToggleableComponentBase : ComponentBase
+    public abstract class ToggleableComponentBase : BootstrapComponentBase
     {
         [Parameter] protected EventCallback<bool> IsOpenChanged { get; set; }
         [Parameter]
