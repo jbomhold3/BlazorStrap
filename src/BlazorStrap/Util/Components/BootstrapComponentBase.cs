@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 
-namespace BlazorStrap.Util
+namespace BlazorStrap.Util.Components
 {
     public class BootstrapComponentBase : ComponentBase
     {

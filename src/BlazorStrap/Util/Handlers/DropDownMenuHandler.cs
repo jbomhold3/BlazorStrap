@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BlazorStrap.Util
+namespace BlazorStrap.Util.Handlers
 {
     public class DropDownMenuHandler
     {
