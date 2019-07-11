@@ -1,7 +1,7 @@
 ﻿@inherits ToggleableComponentBase
 
 <CascadingValue Value="@DropDownMenuControl">
-    <DynamicElement Attributes="@UnknownParameters" TagName="div" class="@classname" @onfocusout="@LostFocus">
+    <DynamicElement TagName="div" class="@classname" @onfocusout="@LostFocus">
         @ChildContent
     </DynamicElement>
 </CascadingValue>

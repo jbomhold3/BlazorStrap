@@ -1,8 +1,6 @@
-﻿@inherits BootstrapComponentBase
-
-@if (IsOpen)
+﻿@if (IsOpen)
 {
-    <DynamicElement TagName="div" class="@classname" role="alert" Attributes="@UnknownParameters">
+    <DynamicElement TagName="div" class="@classname" role="alert">
         @ChildContent
         @if (IsDismissible)
         {

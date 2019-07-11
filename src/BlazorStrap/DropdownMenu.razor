@@ -1,8 +1,8 @@
-﻿@inherits BootstrapComponentBase
+﻿
 @implements IDisposable
 @using System.Timers;
 
-<DynamicElement Attributes="@UnknownParameters" TagName="div" class="@classname" @onmouseout="@MouseOut" @onmouseover="@MouseOver">
+<DynamicElement TagName="div" class="@classname" @onmouseout="@MouseOut" @onmouseover="@MouseOver">
     @ChildContent
 </DynamicElement>
 

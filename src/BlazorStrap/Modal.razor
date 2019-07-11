@@ -1,7 +1,7 @@
 ﻿@inherits ToggleableComponentBase  
 @inject Microsoft.JSInterop.IJSRuntime JSRuntime
 
-<DynamicElement Attributes="@UnknownParameters" style="@styles" TagName="div" class="@classname" tabindex="-1" role="dialog" @onclick="@onclick" @onkeydown="@onEscape">
+<DynamicElement style="@styles" TagName="div" class="@classname" tabindex="-1" role="dialog" @onclick="@onclick" @onkeydown="@onEscape">
     <div class="@innerClassname" role="document" @ref="Me" tabindex="-2" >
         <div class="modal-content" @onclick="@dontclick">
             @ChildContent
