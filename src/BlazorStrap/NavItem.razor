@@ -3,7 +3,7 @@
 @using System.Timers;
 
 <CascadingValue Value="@DropDownMenuControl">
-    <DynamicElement  @attributes="UnknownParameters" TagName="li" class="@classname" @onfocusout="@LostFocus" @onmousedown="@(() => _MouseDown = true)">
+    <DynamicElement Attributes="@UnknownParameters" TagName="li" class="@classname" @onfocusout="@LostFocus" @onmousedown="@(() => _MouseDown = true)">
         @ChildContent
     </DynamicElement>
 </CascadingValue>
