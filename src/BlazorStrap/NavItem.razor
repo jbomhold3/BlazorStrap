@@ -2,8 +2,8 @@
 @implements IDisposable
 @using System.Timers;
 
-<CascadingValue Value="@DropDownMenuControl" @attributes="UnknownParameters">
-    <DynamicElement TagName="li" class="@classname" @onfocusout="@LostFocus" @onmousedown="@(() => _MouseDown = true)">
+<CascadingValue Value="@DropDownMenuControl">
+    <DynamicElement  @attributes="UnknownParameters" TagName="li" class="@classname" @onfocusout="@LostFocus" @onmousedown="@(() => _MouseDown = true)">
         @ChildContent
     </DynamicElement>
 </CascadingValue>
